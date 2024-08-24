@@ -1,12 +1,11 @@
 # CSITTeam017
 CSITTeam017
 
-# Team Name : 
+TEAM NAME : 
 
+TEAM IDEA : 
 
-
-# Team Members : 
-
+TEAM MEMBERS : 
 Shubh Agarwal lit2023046 lit2023046@iiitl.ac.in
 
 Vishesh Singh lit2023054 lit2023054@iiitl.ac.in
