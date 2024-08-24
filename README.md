@@ -1,7 +1,7 @@
 # CSITTeam017
 CSITTeam017
 
-TEAM NAME : 
+TEAM NAME : AidConnect
 
 TEAM IDEA : 
 
