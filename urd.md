@@ -1,4 +1,4 @@
-# **User Requirements Document (URD) for Google Meet Project**
+# **User Requirements Document (URD) for Google Meet Clone**
 
 ## **1. Introduction**
 
