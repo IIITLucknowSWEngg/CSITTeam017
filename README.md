@@ -10,7 +10,7 @@ Shubh Agarwal lit2023046 lit2023046@iiitl.ac.in
 
 Vishesh Singh lit2023054 lit2023054@iiitl.ac.in
 
-Rishabh Khushwah lit2023041 lit2023041@iiitl.ac.in
+Rishabh Khushwaha lit2023041 goldenyaro4321@gmail.com
 
 Harshit Maheswari  lit2023052 lit2023052@iiitl.ac.in
 
