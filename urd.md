@@ -97,6 +97,49 @@ The project focuses on building an intuitive and accessible video conferencing p
   
 ---
 
-## **8. Appendix**
+## **8. User Flow**
+
+### **8.1 Meeting Creation Flow**
+1. **Login/Guest Access**: User logs into their account or joins as a guest.
+2. **Meeting Setup**: 
+   - User clicks "Create Meeting" and configures meeting details (title, time, participants).
+   - Option to schedule the meeting or start it immediately.
+   - User can enable/disable options like recording, screen sharing, and participant roles.
+3. **Invite Participants**: 
+   - Share meeting link or send calendar invitations via email.
+4. **Meeting Start**: 
+   - Host joins the meeting.
+   - Participants receive a notification or email with the meeting link and join.
+5. **In-Meeting Actions**: 
+   - Video/audio toggle, chat, screen sharing, breakout rooms, recording.
+   - Host manages participant controls (mute/unmute, role assignment).
+6. **Meeting End**: 
+   - Host or participant clicks "End Meeting."
+   - Option to save the recording or view meeting summary.
+
+### **8.2 Meeting Join Flow**
+1. **Join from Link**: User receives the link and clicks to join the meeting.
+2. **Authentication**: 
+   - Guest users enter their name.
+   - Logged-in users can directly join based on their role.
+3. **Device Setup**: 
+   - Option to test video, audio, and microphone settings before joining.
+4. **In-Meeting**: 
+   - Join the ongoing meeting, access chat, video, and screen-sharing features.
+
+### **8.3 Post-Meeting Flow**
+1. **Meeting Summary**: 
+   - Participants receive a summary email (optional), including meeting notes and recording link.
+2. **Follow-Up Actions**: 
+   - View or download meeting recording.
+   - Host/participants can share recording and meeting notes.
+3. **Analytics/Reports**: 
+   - For enterprise accounts, admins can view attendance reports and meeting analytics.
+
+---
+
+
+## **9. Appendix**
+
 - **API Documentation**: Include APIs used for integrations.
 - **User Manual**: A step-by-step guide for users on how to schedule and join meetings.
