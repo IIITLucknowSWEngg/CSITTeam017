@@ -11,7 +11,7 @@ Achievers
 
 | Name                     | Branch | Roll Number | Email                           | GitHub ID  |
 |--------------------------|--------|-------------|---------------------------------|------------|
-| Shubh Agarwal            | IT   | lit2023046  | lit2023046@iiitl.ac.in           | [GitHub ID] |
+| Shubh Agarwal            | IT   | lit2023046  | lit2023046@iiitl.ac.in           | Shubhf18425 |
 | Vishesh Singh            | IT   | lit2023054  | lit2023054@iiitl.ac.in           | [notvishesh] |
 | Rishabh Khushwaha        | IT   | lit2023041  | goldenyaro4321@gmail.com         | Rishabhkushwaha7 |
 | Harshit Maheswari        | IT   | lit2023052  | lit2023052@iiitl.ac.in           | [GitHub ID] |
