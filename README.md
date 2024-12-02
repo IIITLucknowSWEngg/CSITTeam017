@@ -2,7 +2,7 @@
 
 ## Project Idea
 
-Google Meet Clone
+Google Meet
 ## Team Name
 
 Achievers
