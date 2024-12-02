@@ -1,145 +1,116 @@
-# Software Requirements Specification (SRS)
+# Software Requirements Specification (SRS) for Meeting Application Project
 
-## Project Title: **Google Meet Clone**
+## 4.1 Introduction
 
-### Version: 1.0
+### 4.1.1 Purpose
+A new meeting application designed to transform how your team connects. This document explores features, user needs, and technical specifications for a user-friendly platform to schedule, conduct, and manage productive virtual meetings. The project aims to foster collaboration and address remote communication challenges, offering an application that empowers seamless connection and efficient collaboration.
 
+### 4.1.2 Scope of the Project
+The Meeting Application is a web-based platform modernizing meeting organization. It provides a user-friendly interface for scheduling, managing, and documenting meetings. Built with HTML, CSS, JavaScript, Tailwind CSS, Node.js, MongoDB, Socket.io, and Peer.js, it ensures cross-platform compatibility and scalability. The application streamlines meeting management, replacing manual processes, and boosting productivity through an intuitive interface and efficient features.
 
----
-
-## 1. Introduction
-
-### 1.1 Purpose
-The purpose of this document is to outline the software requirements for the development of a Google Meet-like video conferencing application. The system will enable users to create, join, and manage online meetings with audio and video capabilities, chat features, and screen sharing.
-
-### 1.2 Scope
-This software will be a web-based platform that allows users to:
-- Host and join video/audio meetings.
-- Use chat features during meetings.
-- Share their screen with participants.
-- Manage participants and meeting settings.
-
-### 1.3 Definitions, Acronyms, and Abbreviations
-- **SRS**: Software Requirements Specification
-- **UI**: User Interface
-- **API**: Application Programming Interface
-- **Host**: The user who creates the meeting
-- **Participant**: Any user joining the meeting
-
-### 1.4 References
-- [WebRTC Documentation](https://webrtc.org/)
-- [Google Meet API Reference](https://developers.google.com/meet)
+### 4.1.3 References
+1. *Software Requirements* (Microsoft), Second Edition, by Karl E. Wiegers
+2. *Fundamentals of Database Systems* by Elmasri
+3. *Software Requirements and Specifications: A Lexicon of Practice, Principles, and Prejudices* (ACM Press) by Michael Jackson
+4. *Fundamentals of Software Engineering* by Rajib Mall
+5. *Software Engineering: A Practitioner’s Approach*, Fifth Edition, by Roger S. Pressman
 
 ---
 
-## 2. Overall Description
+## 4.2 Overall Description
 
-### 2.1 Product Perspective
-The application is an independent web application that uses WebRTC for real-time communication. It will provide seamless video conferencing capabilities with integrated chat and screen sharing features.
+### 4.2.1 Product Perspective
+The Meeting Application replaces traditional meeting management methods with an advanced scheduling and documentation system. It streamlines processes from scheduling to recording minutes, tracking attendance, and generating analytics.
 
-### 2.2 Product Functions
-- **User Registration and Login**: Users can register or log in to the application.
-- **Create Meeting**: Users can create a new meeting and invite others.
-- **Join Meeting**: Users can join existing meetings via a unique meeting link.
-- **Video and Audio Communication**: Real-time audio and video communication.
-- **Screen Sharing**: Users can share their screen during meetings.
-- **Chat Feature**: Text chat functionality within meetings.
-- **Mute/Unmute and Video On/Off**: Control audio and video during the meeting.
-- **End Meeting**: Hosts can end the meeting for all participants.
+### 4.2.2 Product Functions
+#### For Users:
+- **New User Registration**: Sign-up with required details.
+- **User Login**: Secure access for registered users.
+- **Schedule Meeting**: Create meetings with title, time, agenda, and participants.
+- **View Meetings**: Access details of past and upcoming meetings.
+- **Join Meeting**: Participate in video conferencing.
+- **Meeting Agenda**: Share meeting agendas with participants.
+- **Minutes of Meeting**: Document and distribute meeting minutes.
+- **Receive Notifications**: Automated alerts for meetings.
 
-### 2.3 User Classes and Characteristics
-- **Host**: Users who create meetings.
-- **Participant**: Users who join meetings.
-- **Admin**: Users who manage the system (optional).
+#### For Admins:
+- **Record Meeting Activities**: Track schedules and attendance.
+- **Manage Users**: Administer user accounts and permissions.
+- **Manage Meetings**: Oversee meeting schedules and updates.
+- **Room and Resource Booking**: Allocate resources efficiently.
+- **View Meeting Analytics**: Analyze attendance and frequency.
+- **Defaulter List**: Track habitual absentees.
+- **Send Broadcast Notifications**: Share announcements with users.
 
-### 2.4 Operating Environment
-- **Client Side**: Web browser (Chrome, Firefox, Edge)
-- **Server Side**: Node.js, WebRTC for communication, MongoDB for database management
-- **Platform**: Web application
-
-### 2.5 Design and Implementation Constraints
-- WebRTC will be used for real-time communication.
-- Application must support multiple participants with low latency.
-- Should be compatible with modern web browsers.
-
----
-
-## 3. Specific Requirements
-
-### 3.1 Functional Requirements
-1. **User Registration and Login**
-    - Users must be able to register with email and password.
-    - Users must be able to log in using valid credentials.
-    
-2. **Meeting Creation**
-    - Hosts can create a new meeting and get a unique link.
-    - The system should generate a unique meeting ID for every new meeting.
-    
-3. **Join Meeting**
-    - Users can join a meeting by entering the meeting ID or link.
-    - The system should validate the meeting link before allowing access.
-    
-4. **Video/Audio Communication**
-    - Enable real-time video and audio communication using WebRTC.
-    - Participants can mute/unmute their microphone and turn on/off their camera.
-
-5. **Chat Feature**
-    - Users can send text messages to all participants during a meeting.
-    
-6. **Screen Sharing**
-    - Users can share their screen with other participants during the meeting.
-    
-7. **End Meeting**
-    - Hosts can end the meeting for all participants, and the meeting should close for all users.
-
-### 3.2 Non-Functional Requirements
-1. **Performance**
-    - The system should support up to 50 participants in a meeting without significant performance degradation.
-    
-2. **Usability**
-    - The user interface should be simple and intuitive for non-technical users.
-    
-3. **Reliability**
-    - The system should maintain a stable connection during meetings.
-    
-4. **Security**
-    - The application should use secure communication protocols (e.g., HTTPS, encryption for data transmission).
-
-5. **Scalability**
-    - The application should be scalable to support more users and meetings over time.
-
-### 3.3 System Requirements
-- **Front-End**: HTML, CSS, JavaScript (React/Angular)
-- **Back-End**: Node.js, WebRTC for real-time communication
-- **Database**: MongoDB for storing user and meeting data
+### 4.2.3 Class Diagram and Characteristics
+The class diagram defines the structure and relationships among classes, showcasing aggregation and multiplicity for effective meeting management.
+<img width="354" alt="Screenshot 2024-12-02 at 10 42 27 PM" src="https://github.com/user-attachments/assets/2460a1e8-7fda-4f26-a647-cba31c69c616">
 
 ---
 
-## 4. External Interface Requirements
+## 4.3 Designing the Meeting Application
 
-### 4.1 User Interfaces
-- **Login/Registration Screen**: A simple form for users to register and log in.
-- **Dashboard**: Shows a list of meetings the user has hosted or joined.
-- **Meeting Interface**: Contains video feeds, mute/unmute buttons, chat box, screen share option, and an end meeting button.
+### Use Case Diagram
+The diagram outlines user and admin interactions, ensuring streamlined workflows with distinct roles.
+<img width="307" alt="Screenshot 2024-12-02 at 10 43 44 PM" src="https://github.com/user-attachments/assets/108b240f-8d37-4e32-be35-98c54367b72c">
 
-### 4.2 Hardware Interfaces
-- Supports devices with a camera and microphone, such as laptops, desktops, and smartphones.
 
-### 4.3 Software Interfaces
-- WebRTC API for real-time video/audio communication.
-- MongoDB for database management.
+
+### ER Model
+The ER diagram defines entities like User, Meeting, Participant, Recording, and Chat, detailing their relationships for efficient database management.
+<img width="282" alt="Screenshot 2024-12-02 at 10 44 37 PM" src="https://github.com/user-attachments/assets/82762651-5864-4434-a43b-25978829f998">
+
+
+
+
+### Data Flow Diagram (DFD)
+The DFD represents information flow within the system across processes like scheduling, attendance tracking, and analytics generation:
+- **Level 0**: Overview of system functionality.
+- **Level 1**: Details user and admin interactions.
+- **Level 2**: Highlights backend processes and database operations.
+- 
+<img width="871" alt="Screenshot 2024-12-02 at 10 45 34 PM" src="https://github.com/user-attachments/assets/6b0ef8b0-dc87-4b82-83b9-96d7bc9d2ee5">
 
 ---
 
-## 5. Other Non-Functional Requirements
+## 4.4 Functional Requirements
 
-### 5.1 Performance Requirements
-- The system should load the meeting interface within 2 seconds on a good internet connection.
+- **User Authentication and Authorization**: Secure account creation and role-based access.
+- **Video Conferencing**: Host and join meetings with audio, video, and screen sharing.
+- **Meeting Scheduling**: Set meeting topics, dates, times, and invite participants.
+- **Notification System**: Alerts for meeting updates and reminders.
+- **Collaboration Features**: Share screens, documents, and virtual whiteboards.
+- **Recording and Playback**: Record and replay meetings.
+- **Integration**: Sync with Google Calendar or Outlook.
 
-### 5.2 Security Requirements
-- User authentication must be done using JWT (JSON Web Token).
-- Meetings should be password-protected or link-based for security.
+### 4.4.1 Software Requirements
+- **Frontend**: HTML, CSS, JavaScript, Tailwind CSS
+- **Backend**: Node.js, MongoDB, Peer.js, Socket.io
+- **Operating System**: Windows 7 or above
 
-### 5.3 Maintainability
-- The codebase should follow standard coding practices and be well-documented for future developers.
+### 4.4.2 Hardware Requirements
+- **Processor**: Intel Core i3 or higher
+- **Hard Disk**: 40GB or more
+- **RAM**: 256MB (2GB recommended)
 
+---
+
+## 4.5 Non-Functional Requirements
+
+### 4.5.1 Usability
+The system should be user-friendly and handle errors efficiently.
+
+### 4.5.2 Security
+- Secure database with role-based access.
+- Robust user authentication mechanisms.
+
+### 4.5.3 Performance
+- Handle large datasets and users without faults.
+- Display information within 5 seconds.
+
+### 4.5.4 Error Handling
+Prevent information loss and minimize downtime during unexpected errors.
+
+---
+
+This document serves as a comprehensive guide for developing the Meeting Application, ensuring it meets both functional and non-functional requirements while fostering collaboration and efficient meeting management.
