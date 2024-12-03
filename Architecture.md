@@ -105,6 +105,143 @@ authService --> thirdPartyAuth : "Authenticate with OAuth/SAML"
 
 @enduml
 ```
+# Component Diagram
+
+## Admin
+![adminComponent](https://github.com/user-attachments/assets/6f493cfc-2cbe-4d4f-8d5b-0605fb69a198)
+
+```plantuml
+@startuml
+
+' Define the system components for the Admin Panel
+package "Admin Panel" {
+    component "Dashboard" as Dashboard
+    component "User Management" as UserManagement
+    component "Meeting Management" as MeetingManagement
+    component "Recording Management" as RecordingManagement
+    component "Reports and Analytics" as ReportsAnalytics
+    component "Notification Management" as NotificationManagement
+    component "Support and Feedback" as SupportFeedback
+}
+
+' External services used by the Admin Panel
+database "User Database" as UserDB
+database "Meeting Database" as MeetingDB
+database "Recording Database" as RecordingDB
+database "Feedback Database" as FeedbackDB
+component "Notification Service" as NotificationService
+component "Third-Party Auth Service" as AuthService
+
+' Relationships between Admin Panel components
+Dashboard --> UserManagement : Access User Data
+Dashboard --> MeetingManagement : Monitor Meetings
+Dashboard --> RecordingManagement : Manage Meeting Recordings
+Dashboard --> ReportsAnalytics : Generate Reports
+Dashboard --> NotificationManagement : Send Notifications
+Dashboard --> SupportFeedback : Handle Feedback and Issues
+
+' Internal component interactions
+UserManagement --> UserDB : Read/Write User Data
+MeetingManagement --> MeetingDB : Access Meeting Data
+RecordingManagement --> RecordingDB : Manage Recorded Files
+ReportsAnalytics --> UserDB : Generate User Reports
+ReportsAnalytics --> MeetingDB : Generate Meeting Reports
+ReportsAnalytics --> FeedbackDB : Generate Feedback Reports
+
+' External interactions
+NotificationManagement --> NotificationService : Send Notifications to Users
+UserManagement --> AuthService : Authenticate Users
+
+@enduml
+```
+## Host User
+![hostcomponent](https://github.com/user-attachments/assets/40377c5a-bc9f-404f-89db-658c51bb12e5)
+
+```plantuml
+@startuml
+
+' External Actors
+actor "Host (User)" as Host
+actor "Participants" as Participants
+actor "Notification Service" as NotificationService
+actor "Cloud Storage Service" as CloudStorage
+actor "Third-Party Auth Service" as AuthService
+
+' System Boundary: Google Meet Clone
+package "Google Meet Clone" {
+
+    ' Subsystems related to Hosts
+    rectangle "User Registration \nand Authentication" as Registration
+    rectangle "Meeting Creation \nand Scheduling" as MeetingScheduling
+    rectangle "Real-Time Audio/Video" as VideoAudio
+    rectangle "Screen Sharing \nand Collaboration" as ScreenSharing
+    rectangle "Meeting Recording" as Recording
+    rectangle "Host Notifications" as HostNotifications
+    rectangle "Chat and Polls" as ChatPolls
+}
+
+' Relationships for the Host and system components
+Host --> Registration : Register/Login
+Host --> MeetingScheduling : Create and Schedule Meetings
+Host --> VideoAudio : Host and Manage Video/Audio
+Host --> ScreenSharing : Share Screen/Documents
+Host --> Recording : Record Meetings
+Host --> HostNotifications : Receive Meeting Updates
+Host --> ChatPolls : Use Chat and Conduct Polls
+
+Participants --> VideoAudio : Join Video/Audio Meetings
+Participants --> ChatPolls : Participate in Chat and Polls
+
+' External Interactions
+MeetingScheduling --> AuthService : Authenticate Users
+Recording --> CloudStorage : Save Recorded Meetings
+HostNotifications --> NotificationService : Send Updates to Host
+
+@enduml
+```
+## Participant User
+![Partcipantcomponent](https://github.com/user-attachments/assets/918ce502-902c-45fb-902e-36da8a8874ba)
+
+```plantuml
+@startuml
+
+' External Actors
+actor "Participant (User)" as Participant
+actor "Host (Organizer)" as Host
+actor "Notification Service" as NotificationService
+actor "Cloud Storage Service" as CloudStorage
+
+' System Boundary: Google Meet Clone
+package "Google Meet Clone" {
+
+    ' Subsystems related to Participants
+    rectangle "User Registration \nand Authentication" as Registration
+    rectangle "Join Meeting \nand Interaction" as JoinMeeting
+    rectangle "Real-Time Audio/Video" as VideoAudio
+    rectangle "Screen Viewing \nand Collaboration" as ScreenViewing
+    rectangle "Receive Notifications" as Notifications
+    rectangle "Chat and Polls" as ChatPolls
+    rectangle "Access Meeting Recordings" as AccessRecordings
+}
+
+' Relationships for Participants and system components
+Participant --> Registration : Sign Up/Login
+Participant --> JoinMeeting : Join Scheduled Meetings
+Participant --> VideoAudio : Participate in Video/Audio
+Participant --> ScreenViewing : View Shared Screens
+Participant --> Notifications : Receive Meeting Notifications
+Participant --> ChatPolls : Participate in Chat and Polls
+Participant --> AccessRecordings : View Recorded Meetings
+
+Host --> JoinMeeting : Approve Participant Entry
+
+' External Interactions
+Notifications --> NotificationService : Send Notifications
+AccessRecordings --> CloudStorage : Fetch Recorded Files
+
+@enduml
+
+```
 
 # Deployment Diagram Code
 ![deployment](https://github.com/user-attachments/assets/5bd1bf68-09e9-4642-ac60-ac624cc28bc6)
