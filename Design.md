@@ -30,6 +30,122 @@ The architecture of the Google Meet clone is based on a microservices model with
 ### 2.2 Frontend Architecture
 ![frontendArchitecture](https://github.com/user-attachments/assets/f7c4443e-0cd8-42a7-a38a-007f87351587)
 
+```plantuml
+@startuml
+!theme plain
+title Google Meet - Frontend Architecture
+
+skinparam backgroundColor #fdfdfd
+skinparam packageBackgroundColor #e8f4fa
+skinparam packageBorderColor #007acc
+skinparam defaultTextAlignment center
+
+package "Frontend Application" #ddeeff {
+    ' Core Architecture Layers
+    package "Presentation Layer" #f7e8ff {
+        [Pages/Views] as Pages #c4a7e7
+        [Components] as Components #c4a7e7
+        [Layouts] as Layouts #c4a7e7
+    }
+
+    package "State Management" #fff4e1 {
+        [Redux Store] as ReduxStore #f7c873
+        [Action Creators] as Actions #f7c873
+        [Reducers] as Reducers #f7c873
+        
+        folder "Slices" #ffe2b2 {
+            [User Slice] as UserSlice #ffcc7a
+            [Meeting Slice] as MeetingSlice #ffcc7a
+            [Chat Slice] as ChatSlice #ffcc7a
+            [Participant Slice] as ParticipantSlice #ffcc7a
+        }
+    }
+
+    package "Services Layer" #e7f4e3 {
+        [Authentication Service] as AuthService #a2d9a2
+        [Meeting Service] as MeetingService #a2d9a2
+        [Chat Service] as ChatService #a2d9a2
+        [Participant Service] as ParticipantService #a2d9a2
+    }
+
+    package "Routing" #e3e9fc {
+        [React Router] as Router #91b4f4
+        [Route Configuration] as RouteConfig #91b4f4
+    }
+
+    package "Utilities" #f3e4e4 {
+        [API Interceptor] as APIInterceptor #e09898
+        [Error Handling] as ErrorHandler #e09898
+        [Authentication Middleware] as AuthMiddleware #e09898
+    }
+
+    package "UI Kit & Styling" #e7f2fb {
+        [Tailwind CSS] as Styling #93cfea
+        [Material UI Components] as UIKit #93cfea
+        [Custom Icons] as Icons #93cfea
+    }
+
+    package "Performance Optimization" #faf1e3 {
+        [Code Splitting] as CodeSplit #e0c7a1
+        [Lazy Loading] as LazyLoad #e0c7a1
+        [Memoization] as Memoization #e0c7a1
+    }
+}
+
+package "External Integrations" #f8e3e7 {
+    [Google OAuth] as OAuth #f2929b
+    [WebRTC] as WebRTC #f2929b
+    [Real-Time Analytics] as Analytics #f2929b
+}
+
+' Relationship Connections
+Pages -down-> Router : "Routes"
+Pages -down-> Components : "UI"
+Pages -down-> ReduxStore : "State"
+
+Components -down-> UIKit : "Design System"
+Components -down-> Icons
+Components -down-> Styling : "CSS"
+
+ReduxStore -down-> Actions : "Actions"
+ReduxStore -down-> Reducers : "State Updates"
+
+Actions -down-> Services : "APIs"
+Reducers -down-> Services : "Data"
+
+Services -down-> APIInterceptor
+Services -down-> AuthMiddleware : "Middleware"
+
+Router -down-> RouteConfig : "Dynamic Routes"
+Router -down-> LazyLoad : "On-demand"
+
+APIInterceptor -down-> OAuth : "Authentication"
+APIInterceptor -down-> ErrorHandler : "Error Management"
+
+' Performance Optimization Connections
+Pages -down-> CodeSplit : "Optimization"
+Components -down-> Memoization : "Performance"
+
+' External Integration Connections
+Pages -down-> WebRTC : "Real-time Communication"
+Pages -down-> Analytics : "Usage Metrics"
+
+note right of "Frontend Application"
+    Technology Stack:
+    - React 18
+    - Redux Toolkit
+    - React Router
+    - TypeScript
+    - Tailwind CSS
+    - Material UI
+    - WebRTC
+    Responsive and Real-Time Design
+end note
+}
+@enduml
+
+```
+
 The frontend architecture includes:
 - **Presentation Layer**: 
   - User Interface (UI) components built with React and React Native.
