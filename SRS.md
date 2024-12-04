@@ -112,5 +112,13 @@ The system should be user-friendly and handle errors efficiently.
 Prevent information loss and minimize downtime during unexpected errors.
 
 ---
+## 5.Appendices
+- **Appendix A** : Abuse case Diagram
 
-This document serves as a comprehensive guide for developing the Meeting Application, ensuring it meets both functional and non-functional requirements while fostering collaboration and efficient meeting management.
+- **Appendix B** : Error case diagram
+
+### Abuse case Diagram
+![abusecaseDIagram](https://github.com/user-attachments/assets/823f29e7-d044-472d-99c6-5a5356a47556)
+### Error case diagram
+![error case diagram](https://github.com/user-attachments/assets/b92cecfa-1df9-4c3a-bb0d-6030371583e5)
+
