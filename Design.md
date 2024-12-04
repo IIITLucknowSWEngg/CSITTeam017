@@ -305,6 +305,112 @@ The system will utilize a relational or NoSQL database for structured storage an
 - **Notification Service**: Sends reminders, invites, and real-time updates to users.
   
 ## 4. Database Design
+![databaseDesgin](https://github.com/user-attachments/assets/84fe7f08-4ccb-455c-88f2-90bfabd2d001)
+```plantuml
+@startuml
+entity "Users" {
+    * user_id : UUID [PK]
+    * email : String [Unique]
+    * password_hash : String
+    * full_name : String
+    * profile_picture_url : String
+    * role : Enum('User', 'Host', 'Admin')
+    * created_at : Timestamp
+    * updated_at : Timestamp
+}
+
+entity "Meetings" {
+    * meeting_id : UUID [PK]
+    * host_id : UUID [FK -> Users.user_id]
+    * title : String
+    * description : String
+    * start_time : Timestamp
+    * end_time : Timestamp
+    * is_recorded : Boolean
+    * recording_url : String
+    * created_at : Timestamp
+    * updated_at : Timestamp
+}
+
+entity "Participants" {
+    * participant_id : UUID [PK]
+    * meeting_id : UUID [FK -> Meetings.meeting_id]
+    * user_id : UUID [FK -> Users.user_id]
+    * join_time : Timestamp
+    * leave_time : Timestamp
+    * role : Enum('Host', 'Participant')
+}
+
+entity "Chats" {
+    * chat_id : UUID [PK]
+    * meeting_id : UUID [FK -> Meetings.meeting_id]
+    * sender_id : UUID [FK -> Users.user_id]
+    * message : Text
+    * sent_at : Timestamp
+}
+
+entity "Devices" {
+    * device_id : UUID [PK]
+    * user_id : UUID [FK -> Users.user_id]
+    * device_type : Enum('Desktop', 'Mobile', 'Tablet')
+    * os : String
+    * last_used_at : Timestamp
+}
+
+entity "Settings" {
+    * settings_id : UUID [PK]
+    * user_id : UUID [FK -> Users.user_id]
+    * theme : Enum('Light', 'Dark')
+    * notifications_enabled : Boolean
+    * language : String
+    * time_zone : String
+}
+
+entity "MeetingAnalytics" {
+    * analytics_id : UUID [PK]
+    * meeting_id : UUID [FK -> Meetings.meeting_id]
+    * participants_count : Integer
+    * avg_speaking_time : Decimal
+    * total_duration : Decimal
+    * bandwidth_usage : Decimal
+    * created_at : Timestamp
+}
+
+entity "Recordings" {
+    * recording_id : UUID [PK]
+    * meeting_id : UUID [FK -> Meetings.meeting_id]
+    * file_url : String
+    * file_size : Decimal
+    * created_at : Timestamp
+}
+
+entity "Roles" {
+    * role_id : UUID [PK]
+    * role_name : String [Unique]
+    * permissions : Text
+}
+
+entity "Logs" {
+    * log_id : UUID [PK]
+    * user_id : UUID [FK -> Users.user_id]
+    * action : String
+    * description : Text
+    * logged_at : Timestamp
+}
+
+Users "1" -- "0..*" Meetings : "Hosts"
+Meetings "1" -- "0..*" Participants : "Includes"
+Users "1" -- "0..*" Participants : "Joins"
+Meetings "1" -- "0..*" Chats : "Has"
+Users "1" -- "0..*" Chats : "Sends"
+Users "1" -- "0..*" Devices : "Uses"
+Users "1" -- "0..*" Settings : "Configures"
+Meetings "1" -- "0..*" MeetingAnalytics : "Generates"
+Meetings "1" -- "0..*" Recordings : "Records"
+Users "1" -- "0..*" Logs : "Generates"
+Roles "1" -- "0..*" Users : "Assigned"
+@enduml
+```
 
 ### 4.1 Database Schema
 The database will be structured to store and retrieve data related to users, meetings, participants, and notifications. The major collections or tables will include:
