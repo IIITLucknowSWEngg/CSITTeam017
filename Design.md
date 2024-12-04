@@ -1,4 +1,4 @@
-# Software Design Description (SDD) - Google Meet Clone
+# Software Design Description (SDD) - Google Meet
 
 ## 1. Introduction
 
@@ -428,7 +428,84 @@ The database will be structured to store and retrieve data related to users, mee
 - Meeting recordings and associated data will be stored in a cloud storage solution like **Amazon S3**.
 
 ## 5. Interface Design
+![interfaceDesign](https://github.com/user-attachments/assets/c012197d-f387-4b62-8a24-8ce0bed7f913)
 
+```plantuml
+@startuml
+skinparam linetype polyline
+title Google Meet - Interface Design
+
+rectangle "Authentication Screens" {
+    (Login Screen) as Login
+    (Sign-up Screen) as Signup
+    (Password Recovery) as PasswordRecovery
+}
+
+rectangle "Main Application Screens" {
+    (Home/Dashboard) as Home
+    (Meeting Room) as MeetingRoom
+    (Scheduled Meetings) as ScheduledMeetings
+    (Meeting Details) as MeetingDetails
+}
+
+rectangle "Meeting Features Screens" {
+    (Chat Window) as Chat
+    (Participants List) as Participants
+    (Screen Sharing) as ScreenShare
+    (Recording Management) as Recording
+    (Settings/Preferences) as Preferences
+}
+
+rectangle "User Profile Screens" {
+    (User Profile) as Profile
+    (Account Settings) as AccountSettings
+    (Meeting History) as MeetingHistory
+}
+
+rectangle "Navigation Components" {
+    (Sidebar Menu) as Sidebar
+    (Top Navigation Bar) as TopNav
+    (Join Meeting Button) as JoinButton
+    (Schedule Meeting Button) as ScheduleButton
+}
+
+rectangle "UI Components" {
+    (Video Grid) as VideoGrid
+    (Mute/Unmute Button) as MuteButton
+    (Video On/Off Button) as VideoButton
+    (End Call Button) as EndCall
+    (Raise Hand Button) as RaiseHand
+    (Chat Icon) as ChatIcon
+}
+
+' Navigation Flows
+Login --> Home
+Signup --> Home
+Home --> MeetingRoom
+MeetingRoom --> Chat
+MeetingRoom --> Participants
+MeetingRoom --> ScreenShare
+Sidebar --> Home
+Sidebar --> ScheduledMeetings
+Home --> MeetingDetails
+MeetingDetails --> JoinButton
+
+note right of "UI Components"
+    Design Principles:
+    - Responsive Design
+    - Mobile-First Approach
+    - Consistent UI/UX
+    - Accessibility
+    - Performance Optimized
+
+    Breakpoints:
+    - Mobile: <600px
+    - Tablet: 600-1024px
+    - Desktop: >1024px
+end note
+@enduml
+
+```
 ### 5.1 API Design
 The system will expose REST APIs and GraphQL endpoints for the frontend and third-party integrations:
 
