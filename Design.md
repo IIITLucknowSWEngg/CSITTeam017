@@ -140,7 +140,7 @@ LogAggregator --> Database : Store Logs
 @enduml
 ```
 
-## 2.3.1 Distributed Service Ecosystem
+### 2.3.1 Distributed Service Ecosystem
 ### Microservices Architecture
 - Independently scalable services
 
@@ -150,7 +150,7 @@ LogAggregator --> Database : Store Logs
 ### Service Discovery
 - Consul/Kubernetes for dynamic service registration
 
-## 2.3.2 Authentication and Security Layer
+### 2.3.2 Authentication and Security Layer
 
 ### 1. Identity Management
 - JWT-based authentication
@@ -165,7 +165,7 @@ LogAggregator --> Database : Store Logs
 - SQL injection safeguards
 
 
-## 2.3.3 Content Management Services
+### 2.3.3 Content Management Services
 
 ### 1. Video Processing Service
 - Multi-format video transcoding
@@ -181,7 +181,7 @@ LogAggregator --> Database : Store Logs
 - Backup and disaster recovery
 
 
-## 2.3.4 Recommendation and Discovery Engine
+### 2.3.4 Recommendation and Discovery Engine
 
 ### 1. Machine Learning Models
 - Collaborative filtering
@@ -197,7 +197,7 @@ LogAggregator --> Database : Store Logs
 
 
 
-## 2.3.5 Interaction and Engagement Services
+### 2.3.5 Interaction and Engagement Services
 
 ### 1. User Interaction Tracking
 - Like, comment, and share mechanisms
@@ -213,7 +213,7 @@ LogAggregator --> Database : Store Logs
 
 
 
-## 2.4 Cross-Cutting Concerns
+### 2.4 Cross-Cutting Concerns
 
 ### 2.4.1 Observability and Monitoring
 - Distributed tracing
@@ -235,7 +235,7 @@ LogAggregator --> Database : Store Logs
 
 
 
-## 2.5 Advertising Ecosystem
+### 2.5 Advertising Ecosystem
 
 ### 2.5.1 Ad Targeting Strategy
 - Demographic-based targeting
@@ -289,7 +289,7 @@ The system will utilize a relational or NoSQL database for structured storage an
 - **Caching Layer**: **Redis** for fast access to frequently queried data like user sessions and meeting metadata.
 - **File Storage**: **Amazon S3** or **Google Cloud Storage** for storing recorded meetings and user profile pictures.
 
-## 3. System Components
+### 3. System Components
 
 ### 3.1 Frontend Components
 - **Home Screen**: Lists upcoming meetings and options to schedule new ones.
