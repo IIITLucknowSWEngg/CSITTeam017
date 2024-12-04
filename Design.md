@@ -147,19 +147,19 @@ end note
 ```
 
 The frontend architecture includes:
-- **Presentation Layer**: 
+#### 2.2.1 Presentation Layer: 
   - User Interface (UI) components built with React and React Native.
   - Responsive layouts using **Tailwind CSS** for styling.
   - Real-time video and audio control using **WebRTC**.
   
-- **State Management**:
+#### 2.2.2 State Management:
   - **Redux** for managing global state (e.g., user data, meeting state).
   - **Context API** for local component-level states.
 
-- **Services Layer**:
+#### 2.2.3 Services Layer:
   - APIs to interact with backend services like authentication, meeting scheduling, and video/audio handling.
   
-- **Routing**:
+#### 2.2.4 Routing:
   - **React Router** for web application navigation.
   - **React Navigation** for mobile apps.
 
