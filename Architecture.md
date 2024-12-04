@@ -1,4 +1,4 @@
-# System Context Diagram code
+1. System Context Diagram code
 
 ![architecture](https://github.com/user-attachments/assets/3b1e6caa-5cbe-427e-aeac-8e2e529028eb)
 
@@ -52,7 +52,7 @@
 
 @enduml
 ```
-# Container Diagram
+2. Container Diagram
 ![containerDiagram](https://github.com/user-attachments/assets/960adbaf-d67b-4c7a-9c33-652f9a86e81e)
 
 ```plantuml
@@ -105,9 +105,9 @@ authService --> thirdPartyAuth : "Authenticate with OAuth/SAML"
 
 @enduml
 ```
-# Component Diagram
+3. Component Diagram
 
-## Admin
+3.1 Admin
 ![adminComponent](https://github.com/user-attachments/assets/6f493cfc-2cbe-4d4f-8d5b-0605fb69a198)
 
 ```plantuml
@@ -154,7 +154,7 @@ UserManagement --> AuthService : Authenticate Users
 
 @enduml
 ```
-## Host User
+3.2 Host User
 ![hostcomponent](https://github.com/user-attachments/assets/40377c5a-bc9f-404f-89db-658c51bb12e5)
 
 ```plantuml
@@ -199,7 +199,7 @@ HostNotifications --> NotificationService : Send Updates to Host
 
 @enduml
 ```
-## Participant User
+3.3 Participant User
 ![Partcipantcomponent](https://github.com/user-attachments/assets/918ce502-902c-45fb-902e-36da8a8874ba)
 
 ```plantuml
@@ -243,7 +243,7 @@ AccessRecordings --> CloudStorage : Fetch Recorded Files
 
 ```
 
-# Deployment Diagram Code
+4. Deployment Diagram Code
 ![deployment](https://github.com/user-attachments/assets/5bd1bf68-09e9-4642-ac60-ac624cc28bc6)
 
 ```plantuml
