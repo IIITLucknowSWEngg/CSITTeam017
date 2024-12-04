@@ -154,7 +154,7 @@ UserManagement --> AuthService : Authenticate Users
 
 @enduml
 ```
-## 3.2 Host User
+## 3.2 Host
 ![hostcomponent](https://github.com/user-attachments/assets/40377c5a-bc9f-404f-89db-658c51bb12e5)
 
 ```plantuml
