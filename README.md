@@ -18,5 +18,5 @@ Achievers
 | Neelesh                  | IT   | lit2023045  | lit2023045@iiitl.ac.in           | Neelesh19634 |
 | Mayank                   | IT   | lit2023008  | mayankkumar0377@gmail.com        | mayank0377 |
 | Rohan Prakash            | CS   | lcs2023014  | pksh.rohan16@gmail.com           | prakashrohan |
-| Abhay Pratap Singh Ahirwar | IT | lit2023055 | lit2023055@iiitl.ac.in            | [GitHub ID] |
+| Abhay Pratap Singh Ahirwar | IT | lit2023055 | lit2023055@iiitl.ac.in            | abhaypratap1111 |
 | Harshit Maheshwari       | IT | LIT2023052    | lit2023052@iiitl.ac.in           | Harshit78228 |
