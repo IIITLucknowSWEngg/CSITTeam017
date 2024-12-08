@@ -662,5 +662,8 @@ The backend will use **WebSocket** or **WebRTC signaling** to facilitate real-ti
 - The platform should offer a **responsive design** for both desktop and mobile devices.
 - The UI must be **intuitive** and user-friendly, providing clear instructions for joining and scheduling meetings.
 
+### Optimizing Video Conferencing Architecture
+To enhance the efficiency and scalability of the video conferencing platform, this design introduces a modular architecture employing microservices and WebRTC for real-time communication. The frontend leverages React with Redux Toolkit for state management and Tailwind CSS for responsive design, while the backend integrates a signaling server and media server with STUN/TURN protocols to support peer-to-peer and relayed connections. Cloud-native deployments with Kubernetes ensure scalability, and security is fortified with JWT-based authentication and encrypted communication. The architecture supports advanced features like video recording, real-time analytics, and seamless third-party integrations, ensuring a robust and user-friendly system.
+
 ## 7. Conclusion
 This Software Design Description (SDD) outlines the architecture, components, database design, and interfaces for the Google Meet-like video conferencing system. The design ensures scalability, security, and real-time communication, while providing a smooth and responsive user experience. The modular architecture allows easy maintenance and future enhancements, such as adding new features like recording, live captions, or enhanced collaboration tools.
