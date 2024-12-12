@@ -1,14 +1,14 @@
 # Software Requirements Specification (SRS) for Meeting Application Project
 
-## 4.1 Introduction
+## 1.1 Introduction
 
-### 4.1.1 Purpose
+### 1.1.1 Purpose
 A new meeting application designed to transform how your team connects. This document explores features, user needs, and technical specifications for a user-friendly platform to schedule, conduct, and manage productive virtual meetings. The project aims to foster collaboration and address remote communication challenges, offering an application that empowers seamless connection and efficient collaboration.
 
-### 4.1.2 Scope of the Project
+### 1.1.2 Scope of the Project
 The Meeting Application is a web-based platform modernizing meeting organization. It provides a user-friendly interface for scheduling, managing, and documenting meetings. Built with HTML, CSS, JavaScript, Tailwind CSS, Node.js, MongoDB, Socket.io, and Peer.js, it ensures cross-platform compatibility and scalability. The application streamlines meeting management, replacing manual processes, and boosting productivity through an intuitive interface and efficient features.
 
-### 4.1.3 References
+### 1.1.3 References
 1. *Software Requirements* (Microsoft), Second Edition, by Karl E. Wiegers
 2. *Fundamentals of Database Systems* by Elmasri
 3. *Software Requirements and Specifications: A Lexicon of Practice, Principles, and Prejudices* (ACM Press) by Michael Jackson
@@ -17,12 +17,12 @@ The Meeting Application is a web-based platform modernizing meeting organization
 
 ---
 
-## 4.2 Overall Description
+## 1.2 Overall Description
 
-### 4.2.1 Product Perspective
+### 1.2.1 Product Perspective
 The Meeting Application replaces traditional meeting management methods with an advanced scheduling and documentation system. It streamlines processes from scheduling to recording minutes, tracking attendance, and generating analytics.
 
-### 4.2.2 Product Functions
+### 1.2.2 Product Functions
 #### For Users:
 - **New User Registration**: Sign-up with required details.
 - **User Login**: Secure access for registered users.
@@ -42,13 +42,13 @@ The Meeting Application replaces traditional meeting management methods with an 
 - **Defaulter List**: Track habitual absentees.
 - **Send Broadcast Notifications**: Share announcements with users.
 
-### 4.2.3 Class Diagram and Characteristics
+### 1.2.3 Class Diagram and Characteristics
 The class diagram defines the structure and relationships among classes, showcasing aggregation and multiplicity for effective meeting management.
 <img width="354" alt="Screenshot 2024-12-02 at 10 42 27 PM" src="https://github.com/user-attachments/assets/2460a1e8-7fda-4f26-a647-cba31c69c616">
 
 ---
 
-## 4.3 Designing the Meeting Application
+## 1.3 Designing the Meeting Application
 
 ### Use Case Diagram
 The diagram outlines user and admin interactions, ensuring streamlined workflows with distinct roles.
@@ -73,7 +73,7 @@ The DFD represents information flow within the system across processes like sche
 
 ---
 
-## 4.4 Functional Requirements
+## 1.4 Functional Requirements
 
 - **User Authentication and Authorization**: Secure account creation and role-based access.
 - **Video Conferencing**: Host and join meetings with audio, video, and screen sharing.
@@ -83,36 +83,36 @@ The DFD represents information flow within the system across processes like sche
 - **Recording and Playback**: Record and replay meetings.
 - **Integration**: Sync with Google Calendar or Outlook.
 
-### 4.4.1 Software Requirements
+### 1.4.1 Software Requirements
 - **Frontend**: HTML, CSS, JavaScript, Tailwind CSS
 - **Backend**: Node.js, MongoDB, Peer.js, Socket.io
 - **Operating System**: Windows 7 or above
 
-### 4.4.2 Hardware Requirements
+### 1.4.2 Hardware Requirements
 - **Processor**: Intel Core i3 or higher
 - **Hard Disk**: 40GB or more
 - **RAM**: 256MB (2GB recommended)
 
 ---
 
-## 4.5 Non-Functional Requirements
+## 1.5 Non-Functional Requirements
 
-### 4.5.1 Usability
+### 1.5.1 Usability
 The system should be user-friendly and handle errors efficiently.
 
-### 4.5.2 Security
+### 1.5.2 Security
 - Secure database with role-based access.
 - Robust user authentication mechanisms.
 
-### 4.5.3 Performance
+### 1.5.3 Performance
 - Handle large datasets and users without faults.
 - Display information within 5 seconds.
 
-### 4.5.4 Error Handling
+### 1.5.4 Error Handling
 Prevent information loss and minimize downtime during unexpected errors.
 
 ---
-## 5.Appendices
+## 1.Appendices
 - **Appendix A** : Abuse case Diagram
 
 - **Appendix B** : Error case diagram
