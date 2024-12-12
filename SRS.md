@@ -114,6 +114,72 @@ The system should be user-friendly and handle errors efficiently.
 Prevent information loss and minimize downtime during unexpected errors.
 
 ---
+
+# Abuse Case Diagram
+
+## Actors
+- **Malicious User**: Attempts unauthorized access or disruptive activities.
+- **Admin**: Monitors and mitigates abusive activities.
+- **System**: Responds to abusive behavior automatically.
+
+## Use Cases
+1. **Attempt to Access Unauthorized Data**:
+   - **Actor**: Malicious User
+   - **Description**: Tries to view sensitive meeting data without permissions.
+   - **Response**: System restricts access and logs the attempt.
+
+2. **Spam or Disrupt Meetings**:
+   - **Actor**: Malicious User
+   - **Description**: Floods chat or audio with spam during a meeting.
+   - **Response**: Admin mutes/kicks users or System flags suspicious activity.
+
+3. **Injection Attacks**:
+   - **Actor**: Malicious User
+   - **Description**: Attempts SQL or code injection.
+   - **Response**: System validates inputs and blocks malicious requests.
+
+4. **DDoS Attacks**:
+   - **Actor**: Malicious User
+   - **Description**: Overloads the server with excessive requests.
+   - **Response**: System employs rate-limiting or firewall rules to mitigate the attack.
+
+---
+
+# Error Case Diagram
+
+## Actors
+- **User**: Encounters application errors during interaction.
+- **Admin**: Provides support or resolves system-level issues.
+- **System**: Manages error detection and notification.
+
+## Use Cases
+1. **Failed Meeting Creation**:
+   - **Actor**: User
+   - **Description**: Error occurs while scheduling a meeting.
+   - **Response**: System displays an error message and suggests retry.
+
+2. **Connection Timeout**:
+   - **Actor**: User
+   - **Description**: Network issues during video conferencing.
+   - **Response**: System reconnects automatically or notifies the user.
+
+3. **Database Connection Error**:
+   - **Actor**: System
+   - **Description**: Fails to retrieve or save meeting data.
+   - **Response**: Admin is alerted to resolve the issue.
+
+4. **Unauthorized Access Attempt**:
+   - **Actor**: User or Malicious User
+   - **Description**: Invalid credentials or access outside permissions.
+   - **Response**: System denies access and logs the event.
+
+5. **Server Downtime**:
+   - **Actor**: System
+   - **Description**: Unexpected server failure affecting the application.
+   - **Response**: Admin resolves the issue; System displays a maintenance page.
+
+
+---
 ## 1.Appendices
 - **Appendix A** : Abuse case Diagram
 
