@@ -3,7 +3,7 @@
 ## 1. Introduction
 
 ### 1.1 Purpose
-This document outlines the user requirements for the **Google Meet Clone** application. It serves as a guide for the design, development, and testing of the application to ensure it meets the needs of its users, including hosts, participants, and administrators.
+This document outlines the user requirements for the **Google Meet** application. It serves as a guide for the design, development, and testing of the application to ensure it meets the needs of its users, including hosts, participants, and administrators.
 
 ### 1.2 Scope
 The Google Meet Clone will be a web and mobile-based video conferencing application that enables users to schedule, host, and join virtual meetings. Key features include real-time video and audio streaming, screen sharing, chat functionality, meeting recordings, and user management.
