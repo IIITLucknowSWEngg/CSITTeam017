@@ -9,11 +9,13 @@ A new meeting application designed to transform how your team connects. This doc
 The Meeting Application is a web-based platform modernizing meeting organization. It provides a user-friendly interface for scheduling, managing, and documenting meetings. Built with HTML, CSS, JavaScript, Tailwind CSS, Node.js, MongoDB, Socket.io, and Peer.js, it ensures cross-platform compatibility and scalability. The application streamlines meeting management, replacing manual processes, and boosting productivity through an intuitive interface and efficient features.
 
 ### 1.1.3 References
-1. *Software Requirements* (Microsoft), Second Edition, by Karl E. Wiegers
-2. *Fundamentals of Database Systems* by Elmasri
-3. *Software Requirements and Specifications: A Lexicon of Practice, Principles, and Prejudices* (ACM Press) by Michael Jackson
-4. *Fundamentals of Software Engineering* by Rajib Mall
-5. *Software Engineering: A Practitioner’s Approach*, Fifth Edition, by Roger S. Pressman
+
+1. [*Software Requirements*, Second Edition, by Karl E. Wiegers (Microsoft)](https://www.amazon.com/Software-Requirements-2nd-Karl-Wiegers/dp/0735618798)
+2. [*Fundamentals of Database Systems* by Ramez Elmasri](https://www.amazon.com/Fundamentals-Database-Systems-Ramez-Elmasri/dp/0133970779)
+3. [*Software Requirements and Specifications: A Lexicon of Practice, Principles, and Prejudices* (ACM Press) by Michael Jackson](https://books.google.co.in/books/about/Software_Requirements_Specifications.html?id=pJ5QAAAAMAAJ&redir_esc=y)
+4. [*Fundamentals of Software Engineering* by Rajib Mall](https://www.amazon.in/FUNDAMENTALS-SOFTWARE-ENGINEERING-5TH-ED/dp/9388028023)
+5. [*Software Engineering: A Practitioner’s Approach*, Fifth Edition, by Roger S. Pressman](https://www.amazon.com/Software-Engineering-Practitioners-Approach-Pressman/dp/0073655783)
+
 
 ---
 
